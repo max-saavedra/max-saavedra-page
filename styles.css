@@ -26,10 +26,10 @@ body {
 /* Header Navigation Row - Contains nav and theme toggle */
 .header-nav-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
@@ -76,24 +76,73 @@ body {
   color: #0056b3;
 }
 
-/* Theme Toggle Button */
+/* Switch Container */
 .theme-toggle {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
-  padding: 8px 12px;
+  padding: 0;
+}
+
+/* Switch body */
+.toggle-switch {
+  width: 55px;
+  height: 28px;
+  background: #000;
+  border: 2px solid #1d4ed8; /* azul borde */
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 6px;
+  transition: background 0.3s ease;
+}
+
+/* Icons — estilo líneas */
+.icon-sun, .icon-moon {
+  font-size: 14px;
+  z-index: 2;
+  color: white;
+  opacity: 0.8;
+}
+
+/* Línea: sol */
+.icon-sun::before {
+  content: "\f185"; /* FontAwesome sun line icon */
+}
+
+/* Línea: luna */
+.icon-moon::before {
+  content: "\f186"; /* FontAwesome moon line icon */
+}
+
+/* Bola que se mueve */
+.toggle-ball {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  left: 3px;
   transition: transform 0.3s ease;
-  border-radius: 6px;
 }
 
-.theme-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
+/* Estado oscuro */
+.dark-mode .toggle-switch {
+  background: white;
 }
 
-.toggle-icon {
-  display: inline-block;
+.dark-mode .icon-sun,
+.dark-mode .icon-moon {
+  color: black;
 }
+
+/* Bola moviéndose hacia la derecha */
+.dark-mode .toggle-ball {
+  transform: translateX(27px);
+}
+
 
 /* Navigation Section (old - removido) */
 .nav-section {
@@ -162,6 +211,58 @@ h2 {
 }
 .card:hover {
   transform: translateY(-5px);
+}
+
+/* Research Cards */
+.research-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  border-left: 5px solid #007BFF;
+  transition: all 0.3s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.research-card h3 {
+  color: #007BFF;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.research-card p {
+  color: #555;
+  margin: 12px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.research-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+.research-card li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.research-card li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #007BFF;
+  font-weight: bold;
 }
 
 /* Certificates Gallery */
@@ -346,6 +447,21 @@ body.dark-mode {
 }
 body.dark-mode .card {
   background: #1e1e1e;
+}
+body.dark-mode .research-card {
+  background: #1e1e1e;
+  border-left-color: #4fa3ff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+body.dark-mode .research-card h3 {
+  color: #4fa3ff;
+}
+body.dark-mode .research-card p,
+body.dark-mode .research-card li {
+  color: #bbb;
+}
+body.dark-mode .research-card li::before {
+  color: #4fa3ff;
 }
 body.dark-mode .skills-list li {
   background: #0056b3;
