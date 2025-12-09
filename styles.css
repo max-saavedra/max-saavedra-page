@@ -425,6 +425,16 @@ section p, section ul {
   color: #0056b3;
 }
 
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  background: #f1f1f1;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #555;
+  align-items: center;
+}
+
 /* Responsive Contact Section */
 @media (max-width: 600px) {
   .contact-section {
