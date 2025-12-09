@@ -1,6 +1,6 @@
 // Dark Mode toggle with localStorage persistence
-const toggleModeButton = document.getElementById('toggleMode');
-const themeToggle = document.querySelector('.theme-toggle');
+const themeToggle = document.getElementById('themeToggle');
+const toggleIcon = document.querySelector('.toggle-icon');
 const body = document.body;
 
 // Load saved theme preference
@@ -15,14 +15,11 @@ if (savedTheme === 'dark') {
 }
 
 function updateThemeIcon() {
-  if (themeToggle) {
-    themeToggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  if (toggleIcon) {
+    toggleIcon.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
   }
 }
 
-if (toggleModeButton) {
-  toggleModeButton.addEventListener('click', toggleTheme);
-}
 if (themeToggle) {
   themeToggle.addEventListener('click', toggleTheme);
 }

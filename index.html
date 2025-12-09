@@ -10,16 +10,20 @@
 <body class="light-mode">
 
 <header class="hero">
-  <nav class="top-nav">
-    <a href="index.html" class="nav-link active">Home</a>
-    <a href="resume.html" class="nav-link">Resume</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-  </nav>
+  <div class="header-nav-row">
+    <nav class="top-nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="resume.html" class="nav-link">Resume</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="toggle-icon">🌙</span>
+    </button>
+  </div>
   <div class="hero-content fade-in">
     <img src="images/profile.png" alt="Profile Picture" class="hero-img"/>
     <h1>Max Saavedra</h1>
     <p class="subtitle">Software Engineer | AI Enthusiast | Peru</p>
-    <button id="toggleMode" class="btn">Toggle Dark Mode</button>
   </div>
 </header>
 
